@@ -25,13 +25,16 @@ public class teaching1246{
             case 2:
                 booleanOperators();
                 break;
+            case 3:
+                comparisonOperators();
+                break;
             default:
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
                 System.out.println("Enter a number from the list above");
                 intro();
         }
-        
+        input.close();
     }
 
     public static void transition(){
@@ -97,6 +100,43 @@ public class teaching1246{
     public static void booleanOperators(){
         Scanner input = new Scanner(System.in);
 
+        System.out.println("Boolean operators (a.k.a Logic Gates) are used to see what boolean inputs result in certain boolean output(true or false)");
+        System.out.print("Would you like to:\n1. See every logic gate table\n2. See how they work\n-->");
+        int userChoice = input.nextInt();
+        switch (userChoice) {
+            case 1:
+                booleanTables();
+                transition();
+                break;
+            case 2:
+                break;
+            default:
+                booleanOperators();
+                break;
+        }
+        System.out.println();
+        System.out.print("Boolean value 1(lowercase): ");
+        Boolean a = input.nextBoolean();
+        System.out.print("Boolean value 2: ");
+        Boolean b = input.nextBoolean();
+
+        if (a == true){
+            System.out.println("a is true");
+        } else {
+            System.out.println("a is false");
+        }
+
+        if (b == true){
+            System.out.println("b is true");
+        } else {
+            System.out.println("b is false");
+        }
+
+        transition();
+        input.close();
+    }
+    
+    public static void booleanTables(){
         Boolean true1 = true;
         Boolean false1 = false;
         Boolean true2 = true;
@@ -297,11 +337,21 @@ public class teaching1246{
             System.out.println("InterruptedException: Message was interrupted, restarting block.");
             booleanOperators();
         }
-
         System.out.println();
+    }
+    
+    public static void comparisonOperators(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter 'a' Value: ");
+        int a = input.nextInt();
+        System.out.print("Enter 'b' Value: ");
+        int b = input.nextInt();
+
         transition();
         input.close();
+        
     }
+
     public static void main(String[] args) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
