@@ -88,8 +88,9 @@ public class teaching1246{
             System.out.println("InterruptedException: Message was interrupted, restarting transition block.");
             transition();
         }
-        // input.close();
+        
         transition();
+        // input.close();
 
     }
 
@@ -142,7 +143,7 @@ public class teaching1246{
         System.out.println();
         System.out.println();
 
-        //and gate
+        //-----------------------------------------------------and gate-----------------------------------------------------
         Boolean[][] options = {{false1, false2}, {true1, false1}, {false1, true1}, {true1, true2}};
         int[] outputs = {out1, out2, out3, out4};
 
@@ -156,12 +157,7 @@ public class teaching1246{
 
         String andTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
 
-        // System.out.println(outputs[0]);
-        // System.out.println(outputs[1]);
-        // System.out.println(outputs[2]);
-        // System.out.println(outputs[3]);
-
-        charArray = ("And Gate:\n"+andTable).toCharArray();
+        charArray = ("AND Gate:\n"+andTable).toCharArray();
         try{
             for (int i = 0; i < charArray.length; i++){
                 System.out.print(charArray[i]);
@@ -174,7 +170,7 @@ public class teaching1246{
 
         System.out.println();
 
-        //or gate
+        //-----------------------------------------------------or gate-----------------------------------------------------
         for(int i = 0; i < 4; i++){
             if (options[i][0] || options[i][1]){
                 outputs[i] = 1;
@@ -185,14 +181,8 @@ public class teaching1246{
 
         String orTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
 
-
-        // System.out.println(outputs[0]);
-        // System.out.println(outputs[1]);
-        // System.out.println(outputs[2]);
-        // System.out.println(outputs[3]);
-
         System.out.println();
-        charArray = ("Or Gate:\n"+orTable).toCharArray();
+        charArray = ("OR Gate:\n"+orTable).toCharArray();
         try{
             for (int i = 0; i < charArray.length; i++){
                 System.out.print(charArray[i]);
@@ -206,21 +196,110 @@ public class teaching1246{
         System.out.println();
         System.out.println();
 
-        System.exit(0);
+        //-----------------------------------------------------xor gate-----------------------------------------------------
+        for(int i = 0; i < 4; i++){
+            if (options[i][0] ^ options[i][1]){
+                outputs[i] = 1;
+            } else {
+                outputs[i] = 0;
+            }
+        }
 
-        //xor gate
+        String xorTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
 
-        //nand gate
+        System.out.println();
+        charArray = ("XOR Gate:\n"+xorTable).toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(10);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: Message was interrupted, restarting block.");
+            booleanOperators();
+        }
 
-        //nor gate
+        System.out.println();
+        System.out.println();
 
-        //xnor gate
 
-        //others:
-        // ^ = xor
-        // !(a && b) = nand
-        // !(a || b) = nor
-        // !(a ^ b) = xnor
+        //-----------------------------------------------------nand gate-----------------------------------------------------
+        for(int i = 0; i < 4; i++){
+            if (!(options[i][0] && options[i][1])){
+                outputs[i] = 1;
+            } else {
+                outputs[i] = 0;
+            }
+        }
+
+        String nandTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
+
+        System.out.println();
+        charArray = ("NAND Gate:\n"+nandTable).toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(10);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: Message was interrupted, restarting block.");
+            booleanOperators();
+        }
+
+        System.out.println();
+        System.out.println();
+
+        //-----------------------------------------------------nor gate-----------------------------------------------------
+        for(int i = 0; i < 4; i++){
+            if (!(options[i][0] || options[i][1])){
+                outputs[i] = 1;
+            } else {
+                outputs[i] = 0;
+            }
+        }
+
+        String norTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
+
+        System.out.println();
+        charArray = ("NOR Gate:\n"+norTable).toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(10);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: Message was interrupted, restarting block.");
+            booleanOperators();
+        }
+
+        System.out.println();
+        System.out.println();
+
+        //-----------------------------------------------------xnor gate-----------------------------------------------------
+        for(int i = 0; i < 4; i++){
+            if (!(options[i][0] ^ options[i][1])){
+                outputs[i] = 1;
+            } else {
+                outputs[i] = 0;
+            }
+        }
+
+        String xnorTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
+
+        System.out.println();
+        charArray = ("XNOR Gate:\n"+xnorTable).toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(10);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: Message was interrupted, restarting block.");
+            booleanOperators();
+        }
+
+        System.out.println();
+        transition();
         input.close();
     }
     public static void main(String[] args) {
