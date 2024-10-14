@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class teaching1246{
-
+    
     public static void intro(){
         Scanner input = new Scanner(System.in);
         String message = "Pick a lesson:\n1. Data Types\n2. Boolean Operators\n-->";
@@ -9,7 +9,7 @@ public class teaching1246{
         try{
             for (int i = 0; i < charArray.length; i++){
                 System.out.print(charArray[i]);
-                Thread.sleep(50);
+                Thread.sleep(25);
             }
         } catch (InterruptedException e) {
             System.out.println("InterruptedException: Message was interrupted, restarting transition block.");
@@ -36,7 +36,7 @@ public class teaching1246{
 
     public static void transition(){
         Scanner input = new Scanner(System.in);
-        String message = "Do you want to return to the main menu?:\n1. Yes\n2. No(Exit Program)";
+        String message = "\nDo you want to return to the main menu?:\n1. Yes\n2. No(Exit Program)";
         char[] charArray = message.toCharArray();
         try{
             for (int i = 0; i < charArray.length; i++){
@@ -52,12 +52,15 @@ public class teaching1246{
 
         switch (userChoice) {
             case 1:
+                System.out.println();
                 intro();
                 break;
             case 2:
                 System.exit(0);
             default:
+                System.out.println();
                 System.out.println("Invalid Input: Returning to Intro");
+                intro();
                 break;
         }
         System.out.print("\033[H\033[2J");
@@ -67,15 +70,24 @@ public class teaching1246{
 
     public static void dataTypes(){
         // Scanner input = new Scanner(System.in);
-
-        System.out.println("Data types ways in which a computer can store various kinds of data. For example: ");
+        System.out.println();
+        
         String a = "hello"; //multiple characters
-		Integer b = 254; //integers
+		Integer b = 256; //integers
 		Boolean c = true; //true or false
 		char d = 'z'; //single ASCII character
 		Double e = 26.426; //decimal values
-
-        System.out.println("String: "+a+"\nInteger: "+b+"\nBoolean(True or False): "+c+"\nASCII Character: "+d+"\nDouble(Decimal): "+e+"\n");
+        String message = "Data types are how computer can store various kinds of data. For example: \nString: "+a+"\nInteger: "+b+"\nBoolean: "+c+"\nASCII Character: "+d+"\nDouble(Decimal): "+e+"\n";
+        char[] charArray = message.toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(50);
+            }
+        } catch (InterruptedException ie) {
+            System.out.println("InterruptedException: Message was interrupted, restarting transition block.");
+            transition();
+        }
         // input.close();
         transition();
 
@@ -83,6 +95,7 @@ public class teaching1246{
 
     public static void booleanOperators(){
         Scanner input = new Scanner(System.in);
+
         Boolean true1 = true;
         Boolean false1 = false;
         Boolean true2 = true;
@@ -95,6 +108,7 @@ public class teaching1246{
         } else {
             out1 = 0;
         }
+
         if (false1 == false){
             out2 = 0;
         } else {
@@ -106,6 +120,7 @@ public class teaching1246{
         } else {
             out3 = 1;
         }
+
         if (!false2 == true){
             out4 = 1;
         } else {
@@ -113,17 +128,21 @@ public class teaching1246{
         }
         System.out.println();
 
-        System.out.println("Yes Gate:       |      Not Gate(!):");
-        System.out.println("input  | output |      input  | output |");
-        System.out.println("------------------     -----------------");
-        System.out.println(true1+"   |    "+out1+"   |      "+true2+"   |    "+out3+"   |");
-        System.out.println(false1+"  |    "+out2+"   |      "+false1+"  |    "+out4+"   |");
+        String singleLogicGate = "Yes Gate:              Not Gate(!):\ninput  | output |      input  | output |\n-------+--------|     --------+--------|\n"+true1+"   |    "+out1+"   |      "+true2+"   |    "+out3+"   |\n"+false1+"  |    "+out2+"   |      "+false1+"  |    "+out4+"   |";
+        char[] charArray = singleLogicGate.toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(10);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: Message was interrupted, restarting block.");
+            booleanOperators();
+        }
         System.out.println();
-
         System.out.println();
 
         //and gate
-
         Boolean[][] options = {{false1, false2}, {true1, false1}, {false1, true1}, {true1, true2}};
         int[] outputs = {out1, out2, out3, out4};
 
@@ -135,21 +154,59 @@ public class teaching1246{
             }
         }
 
-        System.out.println("And Gate:");
-        System.out.println("      input     | output |");
-        System.out.println("   a   |    b   |        |");
-        System.out.println("--------------------------");
-        System.out.println(" "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |");
-        System.out.println(" "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |");
-        System.out.println(" "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |");
-        System.out.println(" "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |");
+        String andTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
+
+        // System.out.println(outputs[0]);
+        // System.out.println(outputs[1]);
+        // System.out.println(outputs[2]);
+        // System.out.println(outputs[3]);
+
+        charArray = ("And Gate:\n"+andTable).toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(10);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: Message was interrupted, restarting block.");
+            booleanOperators();
+        }
 
         System.out.println();
-        System.exit(0);
-
-        
 
         //or gate
+        for(int i = 0; i < 4; i++){
+            if (options[i][0] || options[i][1]){
+                outputs[i] = 1;
+            } else {
+                outputs[i] = 0;
+            }
+        }
+
+        String orTable = "     input      | output |\n   a   |    b   |        |\n-------+--------+--------|\n "+options[0][0]+" | "+options[0][1]+"  |    "+outputs[0]+"   |\n "+options[1][0]+"  | "+options[1][1]+"  |    "+outputs[1]+"   |\n "+options[2][0]+" | "+options[2][1]+"   |    "+outputs[2]+"   |\n "+options[3][0]+"  | "+options[3][1]+"   |    "+outputs[3]+"   |";
+
+
+        // System.out.println(outputs[0]);
+        // System.out.println(outputs[1]);
+        // System.out.println(outputs[2]);
+        // System.out.println(outputs[3]);
+
+        System.out.println();
+        charArray = ("Or Gate:\n"+orTable).toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(10);
+            }
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: Message was interrupted, restarting block.");
+            booleanOperators();
+        }
+
+        System.out.println();
+        System.out.println();
+
+        System.exit(0);
 
         //xor gate
 
@@ -158,14 +215,6 @@ public class teaching1246{
         //nor gate
 
         //xnor gate
-
-        // if (a && b){ //and gate
-        //     //false
-        // } else if (a || b){ //or gate
-        //     //true
-        // } else if (!a){ //not gate
-        //     //false
-        // }
 
         //others:
         // ^ = xor
@@ -183,7 +232,7 @@ public class teaching1246{
         try{
             for (int i = 0; i < charArray.length; i++){
                 System.out.print(charArray[i]);
-                Thread.sleep(50);
+                Thread.sleep(25);
             }
         } catch (InterruptedException e) {
             System.out.println("InterruptedException: Message was interrupted, restarting transition block.");
