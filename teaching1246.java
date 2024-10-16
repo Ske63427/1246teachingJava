@@ -1,10 +1,11 @@
 import java.util.Scanner;
+// \u001b[<n>m
 
 public class teaching1246{
     
     public static void intro(){
         Scanner input = new Scanner(System.in);
-        String message = "Pick a lesson:\n1. Data Types\n2. Boolean Operators\n-->";
+        String message = "Pick a lesson:\n1. Data Types\n2. Boolean Operators\n3. Conditionals\n4. Comparison Operators\n5. Arithmetic Operators\n-->";
         char[] charArray = message.toCharArray();
         try{
             for (int i = 0; i < charArray.length; i++){
@@ -26,7 +27,13 @@ public class teaching1246{
                 booleanOperators();
                 break;
             case 3:
+                conditionals();
+                break;
+            case 4:
                 comparisonOperators();
+                break;
+            case 5:
+                arithmeticOperators();
                 break;
             default:
                 System.out.print("\033[H\033[2J");
@@ -44,7 +51,7 @@ public class teaching1246{
         try{
             for (int i = 0; i < charArray.length; i++){
                 System.out.print(charArray[i]);
-                Thread.sleep(50);
+                Thread.sleep(25);
             }
             System.out.print("\n-->");
         } catch (InterruptedException e) {
@@ -55,13 +62,17 @@ public class teaching1246{
 
         switch (userChoice) {
             case 1:
-                System.out.println();
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
                 intro();
                 break;
             case 2:
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
                 System.exit(0);
             default:
-                System.out.println();
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
                 System.out.println("Invalid Input: Returning to Intro");
                 intro();
                 break;
@@ -73,20 +84,22 @@ public class teaching1246{
 
     public static void dataTypes(){
         // Scanner input = new Scanner(System.in);
-        System.out.println();
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         
         String a = "hello"; //multiple characters
 		Integer b = 256; //integers
 		Boolean c = true; //true or false
 		char d = 'z'; //single ASCII character
 		Double e = 26.426; //decimal values
-        String message = "Data types are how computer can store various kinds of data. For example: \nString: "+a+"\nInteger: "+b+"\nBoolean: "+c+"\nASCII Character: "+d+"\nDouble(Decimal): "+e+"\n";
+        String message = "Primitive data types are how computer can store various kinds of data. For example: \nString: "+a+"\nInteger: "+b+"\nBoolean: "+c+"\nASCII Character: "+d+"\nDouble: "+e+"\n\nThere are also arrays, which are non primitive data structures that hold multiple primitive data values\n{0, 1, 2, 3} //array of integers \n{'a', 'b', 'c'} //array of chars\nI wont be covering data structures in these lessons, but if you are going into computer science after high school, I would reccomend learning about them now.\n\nArrays can be written many ways:\n`primitiveVariableType`[] = `variableName`{item1, item2, ..., item n};\n`primitiveVariableType`[] = `variableName`[arrayLength] //note: you will have to declare every value in the array if you use this method\nEach Item in an array is indexed starting at 0; meaning if you called `variableName`[0], you would call the first item in the array.\n\nThere are also 2D arrays, which can be thought of like tables/spreadsheets. They can be written just like normal arrays, but instead of 1 set of square brackets, they have 2. \nA 2D array is an array of arrays: {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}\n                                    0  1  2    0  1  2    1  2  3\n                                    0          1          2\n";
         char[] charArray = message.toCharArray();
         try{
             for (int i = 0; i < charArray.length; i++){
                 System.out.print(charArray[i]);
-                Thread.sleep(50);
+                Thread.sleep(25);
             }
+            Thread.sleep(100);
         } catch (InterruptedException ie) {
             System.out.println("InterruptedException: Message was interrupted, restarting transition block.");
             transition();
@@ -97,11 +110,31 @@ public class teaching1246{
 
     }
 
+    public static void conditionals(){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        String message = "Conditional statements are programming statements that perform different computations or actions or return different values depending on the value of a condition. \n\nThere are 3 kinds of conditionals:\n1. Structured If\n2. Switch Case\n3. Ternary Operator\n\nA structured if statement is the most basic kind of conditional. It is written like this:\n\nif (condition) {\n    //code to be executed if condition is met\n} else if (condition) {\n    //code to be executed if this condition is met\n} else {\n    //code to be executed if all the previous if/else-if statements are false\n}\n\n";
+        char[] charArray = message.toCharArray();
+        try{
+            for (int i = 0; i < charArray.length; i++){
+                System.out.print(charArray[i]);
+                Thread.sleep(25);
+            }
+            Thread.sleep(100);
+        } catch (InterruptedException ie) {
+            System.out.println("InterruptedException: Message was interrupted, restarting transition block.");
+            transition();
+        }
+        
+        transition();
+    }
+
+
     public static void booleanOperators(){
         Scanner input = new Scanner(System.in);
 
         System.out.println("Boolean operators (a.k.a Logic Gates) are used to see what boolean inputs result in certain boolean output(true or false)");
-        System.out.print("Would you like to:\n1. See every logic gate table\n2. See how they work\n-->");
+        System.out.print("Would you like to:\n1. See every logic gate table\n2. See the lesson\n-->");
         int userChoice = input.nextInt();
         switch (userChoice) {
             case 1:
@@ -115,22 +148,7 @@ public class teaching1246{
                 break;
         }
         System.out.println();
-        System.out.print("Boolean value 1(lowercase): ");
-        Boolean a = input.nextBoolean();
-        System.out.print("Boolean value 2: ");
-        Boolean b = input.nextBoolean();
-
-        if (a == true){
-            System.out.println("a is true");
-        } else {
-            System.out.println("a is false");
-        }
-
-        if (b == true){
-            System.out.println("b is true");
-        } else {
-            System.out.println("b is false");
-        }
+        System.out.println("For this lesson, you will be creating your own program (because honestly I could not think of a lesson for data types lol)\n\n");
 
         transition();
         input.close();
@@ -341,17 +359,18 @@ public class teaching1246{
     }
     
     public static void comparisonOperators(){
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter 'a' Value: ");
-        int a = input.nextInt();
-        System.out.print("Enter 'b' Value: ");
-        int b = input.nextInt();
-
-        transition();
-        input.close();
         
     }
 
+    public static void arithmeticOperators(){
+        //code
+    }
+
+    
+    public static void loops(){
+        //code
+    }
+    
     public static void main(String[] args) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
