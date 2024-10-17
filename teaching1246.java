@@ -113,7 +113,7 @@ public class teaching1246{
     public static void conditionals(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        String message = "Conditional statements are programming statements that perform different computations or actions or return different values depending on the value of a condition. \n\nThere are 3 kinds of conditionals:\n1. Structured If\n2. Switch Case\n3. Ternary Operator\n\nA structured if statement is the most basic kind of conditional. It is written like this:\n\nif (condition) {\n    //code to be executed if condition is met\n} else if (condition) {\n    //code to be executed if this condition is met\n} else {\n    //code to be executed if all the previous if/else-if statements are false\n}\n\n";
+        String message = "Conditional statements are programming statements that perform different computations or actions or return different values depending on the value of a condition. \n\nThere are 3 kinds of conditionals:\n1. Structured If\n2. Switch Case\n3. Ternary Operator\n\nA structured if statement is the most basic kind of conditional. It is written like this:\n\nif (condition) {\n    //code to be executed if condition is met\n} else if (condition) {\n    //code to be executed if this condition is met\n} else {\n    //code to be executed if all the previous if/else-if statements are false\n}\n\nYou should not write code with really long if statements; generally speaking, try to avoid using structured if statements\n\nA switch-case statement is written like this:\nswitch (variable){\n    case 1:\n        //code to be executed in case 1\n    case n:\n        //code to be executed in case n\n    default:\n        //if the variable is not equal to any of the previous cases, this code will be executed\n}\n\nNote: your variable in the switch case statement can only be a Byte, Short, Character, Integer, or Enum\n";
         char[] charArray = message.toCharArray();
         try{
             for (int i = 0; i < charArray.length; i++){
@@ -128,7 +128,6 @@ public class teaching1246{
         
         transition();
     }
-
 
     public static void booleanOperators(){
         Scanner input = new Scanner(System.in);
@@ -359,14 +358,13 @@ public class teaching1246{
     }
     
     public static void comparisonOperators(){
-        
+        //code
     }
 
     public static void arithmeticOperators(){
         //code
     }
 
-    
     public static void loops(){
         //code
     }
@@ -374,7 +372,6 @@ public class teaching1246{
     public static void main(String[] args) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        //System.out.println("Hello! This program is designed to teach you the basics of Java\n");
         String message = "Hello! This program is designed to teach you the basics of Java\n";
         char[] charArray = message.toCharArray();
         try{
