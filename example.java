@@ -1,13 +1,32 @@
-public class main{
+public class example{
     public static void main(String[] args) {
-        int x = 5;
+        String x = "Monday";
 
-        if (x < 10){
-            System.out.println("x is less than 10");
-        } else if (x == 10){
-            System.out.println("x is equal to 10");
-        } else {
-            System.out.println("x is greater than 10");
+        switch(x){
+            case "Monday":
+                System.out.println("It is " + x);
+                break;
+            case "Tuesday":
+                System.out.println("It is " + x);
+                break;
+            case "Wednesday":
+                System.out.println("It is " + x);
+                break;
+            case "Thurday":
+                System.out.println("It is " + x);
+                break;
+            case "Friday":
+                System.out.println("It is " + x);
+                break;
+            case "Saturday":
+                System.out.println("It is " + x);
+                break;
+            case "Sunday":
+                System.out.println("It is " + x);
+                break;
+            default:
+                System.out.println("idk what day it is");
+                break;
         }
     }
 }
