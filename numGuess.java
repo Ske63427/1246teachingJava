@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class numGuess{
     public static Integer guesses = 10;
-    public static Boolean winStatus = false;
     public static final Scanner input = new Scanner(System.in);
 
     public static void slowPrint(String message){
@@ -11,7 +10,7 @@ public class numGuess{
         try{
             for (int i = 0; i < charArray.length; i++){
                 System.out.print(charArray[i]);
-                Thread.sleep(25);
+                Thread.sleep(10);
             }
         } catch (InterruptedException ie) {
             System.out.println("InterruptedException: Message was interrupted, Ending Program.");
@@ -26,33 +25,31 @@ public class numGuess{
             case 2 -> {guesses = 5;}
             case 3 -> {guesses = 3;}
             default -> {
-                slowPrint("Invalid Input: Ending Program");
+                System.out.println("Invalid Input: Ending Program");
                 System.exit(0);
             }
         }
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         game();
     }
 
     public static void game(){
         Random rand = new Random();
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-        int initialGuessCount = guesses + 1;
         int numToGuess = rand.nextInt(1, 101);
-        for (int i = guesses; i > 0; i--){
+        for (int i = 1; i <= guesses; i++){
             System.out.print("Guess a number:\n>");
-            int x = input.nextInt();
+            int x = input.nextInt(); // if i dont assign input.nextInt() to a variable, the program freezes
             if (x == numToGuess){
-                winStatus = true;
-                end(initialGuessCount - i);
+                end(i, true);
             } else {
                 System.out.println((x > numToGuess) ? "Lower\n" : "Higher\n");
             }
         }
-        end(initialGuessCount);
+        end(0, false);
     }
 
-    public static void end(int attempts){
+    public static void end(int attempts, boolean winStatus){
         slowPrint((winStatus) ? "Congratulations, it took you "+ attempts +" attempt(s)" : "You Lost :(");
         System.exit(0);
     }
