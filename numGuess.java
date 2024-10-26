@@ -6,10 +6,9 @@ public class numGuess{
     public static final Scanner input = new Scanner(System.in);
 
     public static void slowPrint(String message){
-        char[] charArray = message.toCharArray();
         try{
-            for (int i = 0; i < charArray.length; i++){
-                System.out.print(charArray[i]);
+            for (char x : message.toCharArray()){
+                System.out.print(x);
                 Thread.sleep(10);
             }
         } catch (InterruptedException ie) {
@@ -21,9 +20,9 @@ public class numGuess{
     public static void intro(){
         slowPrint("Welcome to the number guessing game.\n\nRules:\nEnter a number in between 1-100, you will be told if it is higher or lower, you will then be prompted to give another guess. \nYou win by correctly guessing the number, and you lose if you use up all your attempts\n\nSelect a Difficulty(enter number):\n1. Easy(10 Guesses)\n2. Medium(5 Guesses)\n3. Hard(3 Guesses)\n>");
         switch(input.nextInt()){
-            case 1 -> {guesses = 10;} //vscode told me to use the arrow, idk why
-            case 2 -> {guesses = 5;}
-            case 3 -> {guesses = 3;}
+            case 1 -> guesses = 10; //vscode told me to use the arrow, idk why
+            case 2 -> guesses = 5;
+            case 3 -> guesses = 3;
             default -> {
                 System.out.println("Invalid Input: Ending Program");
                 System.exit(0);
