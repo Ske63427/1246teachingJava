@@ -41,12 +41,12 @@ public class numGuess{
         int numToGuess = rand.nextInt(1, 101);
         for (int i = guesses; i > 0; i--){
             System.out.print("Guess a number:\n>");
-            if (input.nextInt() == numToGuess){
+            int x = input.nextInt();
+            if (x == numToGuess){
                 winStatus = true;
-                System.out.println(guesses);
                 end(initialGuessCount - i);
             } else {
-                System.out.println((input.nextInt() > numToGuess) ? "Lower\n" : "Higher\n");
+                System.out.println((x > numToGuess) ? "Lower\n" : "Higher\n");
             }
         }
         end(initialGuessCount);
