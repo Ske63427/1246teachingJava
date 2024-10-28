@@ -39,11 +39,8 @@ public class numGuess{
         for (byte i = 1; i <= guesses; i++){
             System.out.print("Guess a number:\n>");
             int x = input.nextByte(); // if i dont assign input.nextInt() to a variable, the program freezes
-            if (x == numToGuess){
-                end(i, true);
-            } else {
-                System.out.println((x > numToGuess) ? "Lower\n" : "Higher\n");
-            }
+            if (x == numToGuess) end(i, true);
+            else System.out.println((x > numToGuess) ? "Lower\n" : "Higher\n");
         }
         end((byte) 0, false);
     }
