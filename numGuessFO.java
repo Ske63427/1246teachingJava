@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class numGuessFO{
-    public static Byte guesses = 10;
+    public static byte guesses = 10;
     public static final Scanner input = new Scanner(System.in);
     public static void intro(){
         System.out.println("Welcome to the number guessing game.\n\nRules:\nEnter a number in between 1-100, you will be told if it is higher or lower, you will then be prompted to give another guess. \nYou win by correctly guessing the number, and you lose if you use up all your attempts\n\nSelect a Difficulty(enter number):\n1. Easy(10 Guesses)\n2. Medium(5 Guesses)\n3. Hard(3 Guesses)\n>");

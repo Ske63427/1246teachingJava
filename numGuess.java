@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class numGuess{
-    public static Byte guesses = 10;
+    public static byte guesses = 10;
     public static final Scanner input = new Scanner(System.in);
 
     public static void slowPrint(String message){
